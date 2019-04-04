@@ -14,7 +14,7 @@ extension FlickrClient {
     
     func createParameters(latitude lat: Double, longitude lon: Double, page: Int) -> [String:Any] {
         
-        // Define BBox parameter value.
+  
         let minLon = max(lon - Config.SearchBBoxHalfWidth, Config.SearchLonRange.0)
         let minLat = max(lat - Config.SearchBBoxHalfHeight, Config.SearchLatRange.0)
         let maxLon = min(lon + Config.SearchBBoxHalfWidth, Config.SearchLonRange.1)
@@ -46,7 +46,7 @@ extension FlickrClient {
         
         let task = taskForGETMethod("/", parameters: parametersWithKeys) { (results, error) in
             
-            // Custom error function
+          
             func sendError(_ code: Int, errorString: String) {
                 var userInfo = [String: Any]()
                 
@@ -64,7 +64,7 @@ extension FlickrClient {
             
             let results = results as! [String: AnyObject]
             
-            /* GUARD: Did API return an error (stat != ok)? */
+            /* GUARD: If API resulted in an Error */
             guard let stat = results[JSONResponseKeys.StatusCode] as? String , stat == JSONResponseKeys.OkStatus else {
                 sendError(1, errorString: "Flickr API request returned an error.")
                 return
@@ -76,7 +76,6 @@ extension FlickrClient {
         return task
     }
     
-    // Download image from url
     
     func downloadImage( imagePath: String, completionHandler: @escaping (_ imageData: Data?, _ errorString: String?) -> Void) {
         let session = URLSession.shared

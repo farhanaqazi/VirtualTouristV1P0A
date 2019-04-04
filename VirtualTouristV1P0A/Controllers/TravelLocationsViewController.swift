@@ -15,7 +15,6 @@ import CoreData
 
 class TravelLocationsViewController: UIViewController {
 
-    
     var feedbackGenerator: UIImpactFeedbackGenerator? = nil
     
     var dataController: DataController!

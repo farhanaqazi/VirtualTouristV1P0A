@@ -39,8 +39,6 @@ class FlickrClient {
         
         // Step 2 of 5. Build the URL, Configure the request
         let request = NSMutableURLRequest(url: urlFromParameters(parametersWithKeys, withPathExtension: method))
-        //request.addValue(Constants.ApiKey, forHTTPHeaderField: ParameterKeys.ApiKey)
-        //request.addValue(Constants.ApplicationID, forHTTPHeaderField: ParameterKeys.ApplicationID)
         
         // Step 3 of 5. Making the requeset
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
