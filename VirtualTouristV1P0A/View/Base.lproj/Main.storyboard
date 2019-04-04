@@ -78,6 +78,7 @@
                         <viewLayoutGuide key="safeArea" id="eP7-17-ZiD"/>
                     </view>
                     <navigationItem key="navigationItem" title="Virtual Tourist" id="cSD-zS-eTe" userLabel="Virtual Tourist">
+                        <barButtonItem key="backBarButtonItem" title="OK" id="nSS-je-zRO"/>
                         <barButtonItem key="leftBarButtonItem" id="8Rl-yO-Rlt"/>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="lPO-ds-CJN">
                             <connections>
